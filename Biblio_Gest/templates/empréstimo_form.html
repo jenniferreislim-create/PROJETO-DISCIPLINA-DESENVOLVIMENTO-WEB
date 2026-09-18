@@ -1,0 +1,40 @@
+{% extends "menu.html" %}
+{% load static %}
+
+{% block titulo %}Cadastrar Paciente{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <br>
+    <form method="POST" enctype="multipart/form-data">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addonNome">Livros</span>
+            <input type="text" class="form-control" name="Livros" placeholder="Livros" aria-label="Livros" aria-describedby="basic-addonLivros">
+        </div>
+
+ <div class="col">
+                <div class="input-group mb-3">
+                    <input type="date" class="form-control" name="dataEmpréstimo" placeholder="dataEmpréstimo" aria-label="dataEmpréstimo" aria-describedby="basic-addondataEmpréstimo">
+                    <span class="input-group-text" id="basic-addondataEmpréstimo">DD/MM/AAAA</span>
+                </div>
+
+     <div class="col">
+                <div class="input-group mb-3">
+                    <input type="date" class="form-control" name="dataDevolução" placeholder="dataDevolução" aria-label="dataDevolução" aria-describedby="basic-addondataEmpréstimo">
+                    <span class="input-group-text" id="basic-addondataEmpréstimo">DD/MM/AAAA</span>
+                </div>
+             </div>
+        </div>
+
+        <div class="input-group mb-3">
+            <button type="button" class="btn btn-success">Salvar</button>
+        </div>
+
+
+
+
+    </form>
+</div>
+
+{% endblock %}
