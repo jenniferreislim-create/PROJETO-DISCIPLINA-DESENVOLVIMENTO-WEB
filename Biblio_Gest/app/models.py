@@ -6,6 +6,8 @@ class Usuário(models.Model):
     vinculo = models.CharField(max_length=10)
 
 
+
+
 class Empréstimo(models.Model):
     livros= models.CharField(max_length=50)
     dataEmprestimo = models.DateField()
