@@ -8,26 +8,27 @@
 <div class="container">
     <br>
 
-     <form method="POST" enctype="multipart/form-data">
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addonNome">Usuário</span>
-            <input type="text" class="form-control" name="Usuário" placeholder="Usuário" aria-label="Usuário" aria-describedby="basic-addonUsuário">
+        <form method="POST" enctype="multipart/form-data" id="form-emprestimo">
+        {% csrf_token %}
+
+        <div class="mb-3">
+        <label for="SeuNomeCompleto" class="form-label">Nome Completo</label>
+        <input type="text" class="form-control" id="SeuNomeCompleto" placeholder="Nome Completo">
         </div>
 
 
-     <form method="POST" enctype="multipart/form-data">
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addonNome">Vínculo</span>
-            <input type="text" class="form-control" name="Vínculo" placeholder="Vínculo" aria-label="Vínculo" aria-describedby="basic-addonVínculo">
-        </div>
+        <select class="form-select" aria-label="Default select example">
+        <option selected>Selecione seu vínculo</option>
+        <option value="1">Aluno</option>
+        <option value="2">Professor</option>
+        <option value="3">Servidor</option>
+    </select>
+     <br>
 
-
-    <form method="POST" enctype="multipart/form-data">
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addonNome">Livros</span>
             <input type="text" class="form-control" name="Livros" placeholder="Livros" aria-label="Livros" aria-describedby="basic-addonLivros">
         </div>
-
 
 
  <div class="col">
@@ -44,14 +45,12 @@
              </div>
         </div>
 
-        <div class="input-group mb-3">
-            <button type="button" class="btn btn-success">Salvar</button>
+            <div class="input-group mb-3">
+            <button type="button" class="btn btn-primary">Salvar</button>
         </div>
 
+ </form>
 
-
-
-    </form>
 </div>
 
 {% endblock %}
