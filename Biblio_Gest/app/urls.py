@@ -1,11 +1,11 @@
 from django.urls import path
-from .views import home, empréstimo_form,empréstimo_list
+from .views import home, emprestimo_form,emprestimo_list
 
 
 app_name = "app"
 
 urlpatterns = [
     path('', home, name='home'),
-    path('empréstimo/list/', empréstimo_list, name= 'empréstimo_list'),
-    path('empréstimo/cadastrar/', empréstimo_form, name= 'empréstimo_form'),
+    path('emprestimo/list/', emprestimo_list, name= 'emprestimo_list'),
+    path('emprestimo/cadastrar/', emprestimo_form, name= 'emprestimo_form'),
 ]
