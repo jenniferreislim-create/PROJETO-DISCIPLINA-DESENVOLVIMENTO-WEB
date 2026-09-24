@@ -15,7 +15,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
 
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="{% static 'img/BiblioGest.png' %}" style="height: 50px"></a>
+    <a class="navbar-brand" href="#"><img src="{% static 'img/BiblioGest.png' %}" style="height: 80px"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -39,9 +39,9 @@
             Usuário
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarUsuário">
-            <li><a class="dropdown-item" href="#">cadastrar</a></li>
+            <li><a class="dropdown-item" href="{% url 'app:usuario_form' %}">cadastrar</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">listar</a></li>
+            <li><a class="dropdown-item" href="{% url 'app:usuario_list' %}">listar</a></li>
           </ul>
         </li>
 
@@ -50,9 +50,9 @@
             Livros
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarLivro">
-            <li><a class="dropdown-item" href="#">Cadastrar</a></li>
+            <li><a class="dropdown-item" href="{% url 'app:livro_form' %}">Cadastrar</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Listar</a></li>
+            <li><a class="dropdown-item" href="{% url 'app:livro_list' %}">Listar</a></li>
           </ul>
         </li>
 

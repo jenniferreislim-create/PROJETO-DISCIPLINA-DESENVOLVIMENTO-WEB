@@ -1,5 +1,5 @@
 from django import forms
-from .models import Usuário, Empréstimo
+from .models import Usuário, Empréstimo, Livro
 
 class EmprestimoForm(forms.ModelForm):
     class Meta:
@@ -35,3 +35,20 @@ class UsuarioForm(forms.ModelForm):
             'nome': 'Nome',
             'vinculo': 'Vinculo',
         }
+
+class LivroForm(forms.ModelForm):
+    class Meta:
+        model = Livro
+        fields = '__all__'
+        widgets = {
+            'nome': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nome'}),
+            'autor': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Autor'}),
+
+        }
+
+        labels = {
+            'nome': 'Nome',
+            'autor': 'Autor',
+        }
+
+
