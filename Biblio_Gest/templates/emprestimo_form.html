@@ -13,40 +13,40 @@
 
         <div class="mb-3">
         <label for="SeuNomeCompleto" class="form-label">Nome Completo</label>
-        <input type="text" class="form-control" id="SeuNomeCompleto" placeholder="Nome Completo">
+        <input type="text" class="form-control" id="SeuNomeCompleto", name="nome", placeholder="Nome Completo">
         </div>
 
 
-        <select class="form-select" aria-label="Default select example">
+        <select class="form-select" name="vinculo" aria-label="Default select example">
         <option selected>Selecione seu vínculo</option>
-        <option value="1">Aluno(a)</option>
-        <option value="2">Professor</option>
-        <option value="3">Servidor</option>
+        <option value="Aluno(a)">Aluno(a)</option>
+        <option value="Professor">Professor</option>
+        <option value="Servidor">Servidor</option>
     </select>
      <br>
 
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addonNome">Livros</span>
-            <input type="text" class="form-control" name="Livros" placeholder="Livros" aria-label="Livros" aria-describedby="basic-addonLivros">
+            <input type="text" class="form-control" name="livros" placeholder="livros" aria-label="livros" aria-describedby="basic-addonLivros">
         </div>
 
 
  <div class="col">
                 <div class="input-group mb-3">
-                    <input type="date" class="form-control" name="dataEmpréstimo" placeholder="dataEmpréstimo" aria-label="dataEmpréstimo" aria-describedby="basic-addondataEmpréstimo">
-                    <span class="input-group-text" id="basic-addondataEmpréstimo">DD/MM/AAAA</span>
+                    <input type="date" class="form-control" name="dataEmprestimo" placeholder="dataEmprestimo" aria-label="dataEmprestimo" aria-describedby="basic-addondataEmprestimo">
+                    <span class="input-group-text" id="basic-addondataEmprestimo">DD/MM/AAAA</span>
                 </div>
 
      <div class="col">
                 <div class="input-group mb-3">
-                    <input type="date" class="form-control" name="dataDevolução" placeholder="dataDevolução" aria-label="dataDevolução" aria-describedby="basic-addondataEmpréstimo">
-                    <span class="input-group-text" id="basic-addondataEmpréstimo">DD/MM/AAAA</span>
+                    <input type="date" class="form-control" name="dataDevolucao" placeholder="dataDevolucao" aria-label="dataDevolucao" aria-describedby="basic-addondataDevolucao">
+                    <span class="input-group-text" id="basic-addondataDevolucao">DD/MM/AAAA</span>
                 </div>
              </div>
         </div>
 
             <div class="input-group mb-3">
-            <button type="button" class="btn btn-primary">Salvar</button>
+                <button type="submit" class="btn btn-primary">Salvar</button>
         </div>
 
  </form>

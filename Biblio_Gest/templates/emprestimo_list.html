@@ -11,24 +11,29 @@
         <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Usuário</th>
+            <th scope="col">Nome</th>
             <th scope="col">Vínculo</th>
             <th scope="col">Livros</th>
             <th scope="col">Data do empréstimo</th>
             <th scope="col">Data da devolução</th>
-
+            <th scope="col">Ações</th>
         </tr>
         </thead>
         <tbody>
+        {% for emprestimo in emprestimos %}
         <tr>
-            <th scope="row">1</th>
-             <td>Maria da Silva</td>
-             <td>aluno(a)</td>
-            <td>Dom Casmurro – Machado de Assis</td>
-            <td>05/07/2026</td>
-            <td>15/07/2026</td>
+            <th scope="row">{{ emprestimo.id }}</th>
+            <td>{{ emprestimo.nome }}</td>
+            <td>{{ emprestimo.vinculo }}</td>
+            <td>{{ emprestimo.livros }}</td>
+            <td>{{ emprestimo.dataEmprestimo }}</td>
+            <td>{{ emprestimo.dataDevolucao }}</td>
+            <td>
+                <a href="{% url 'app:emprestimo_edit' emprestimo.id %}"><img src="{% static 'img/edit.png' %}" style="height: 30px"></a>
+                <a href="{% url 'app:emprestimo_delete' emprestimo.id %}" onclick="return confirm('Deseja realmente excluir o empréstimo {{ emprestimo.nome }}?')"><img src="{% static 'img/del.png' %}" style="height: 30px"></a>
+            </td>
         </tr>
-
+        {% endfor %}
         </tbody>
     </table>
 </div>
