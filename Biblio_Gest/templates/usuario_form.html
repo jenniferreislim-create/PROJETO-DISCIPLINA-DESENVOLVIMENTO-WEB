@@ -1,0 +1,33 @@
+{% extends "menu.html" %}
+{% load static %}
+
+{% block titulo %}Cadastrar Usuário{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <br>
+    <form method="POST" enctype="multipart/form-data" action="{% url 'app:usuario_form' %}">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addonNome">Nome</span>
+            <input type="text" class="form-control" name="nome" placeholder="Nome" aria-label="Nome" aria-describedby="basic-addonNome" value="{{ usuario.nome|default:'' }}">
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addonVinculo">Vínculo</span>
+                    <input type="text" class="form-control" name="vinculo" placeholder="Vinculo" aria-label="Vinculo" aria-describedby="basic-addonVinculo"  value="{{ usuario.vinculo|default:'' }}">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="input-group mb-3">
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+
+    </form>
+</div>
+
+{% endblock %}

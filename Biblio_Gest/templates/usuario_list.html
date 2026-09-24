@@ -1,0 +1,63 @@
+{% extends "menu.html" %}
+{% load static %}
+
+{% block titulo %}Listar Usuários{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Vínculo</th>
+
+        </tr>
+        </thead>
+        {% for usuario in usuarios %}
+        <tbody>
+        <tr>
+            <th scope="row">{{ usuario.id }}</th>
+            <td>{{ usuario.nome }}</td>
+            <td>{{ usuario.vinculo }}</td>
+
+            <td>
+                <a href="{% url 'app:usuario_edit' usuario.id %}"><img src="{% static 'img/edit.png' %}" style="height: 30px"></a>
+                <a id="data" data-bs-toggle="modal", onclick="deleteUsuario('{{ usuario.nome }}', '{{ usuario.id }}');" data-bs-target="#exampleModal"><img src="{% static 'img/del.png' %}" style="height: 30px"></a>
+            </td>
+        </tr>
+
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmar Exclusão</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="conteudo" class="modal-body">
+                Deseja excluir o usuário?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <a id="link" href="#" class="btn btn-danger">Excluir</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function deleteUsuario(nome, id){
+        console.log(id, nome);
+        document.getElementById('link').setAttribute('href',"/usuario/deletar/" +id);
+        document.getElementById('conteudo').innerText = "Deseja excluir o usuário " + nome + "?"
+    }
+</script>
+
+{% endblock %}
