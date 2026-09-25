@@ -11,6 +11,7 @@ class Usuário(models.Model):
 
 class Empréstimo(models.Model):
     nome = models.CharField(max_length=100, null=True, blank=True)
+
     livros= models.CharField(max_length=50)
     dataEmprestimo = models.DateField()
     dataDevolucao = models.DateField()

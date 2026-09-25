@@ -13,6 +13,7 @@
             <th scope="col">#</th>
             <th scope="col">Nome</th>
             <th scope="col">Autor</th>
+             <th scope="col">Açoes</th>
 
         </tr>
         </thead>
@@ -25,7 +26,7 @@
 
             <td>
                 <a href="{% url 'app:livro_edit' livro.id %}"><img src="{% static 'img/edit.png' %}" style="height: 30px"></a>
-                <a id="data" data-bs-toggle="modal", onclick="deleteLivro('{{ Livro.nome }}', '{{ Livro.id }}');" data-bs-target="#exampleModal"><img src="{% static 'img/del.png' %}" style="height: 30px"></a>
+                <a id="data" data-bs-toggle="modal", onclick="deleteLivro('{{ livro.nome }}', '{{ livro.id }}');" data-bs-target="#exampleModal"><img src="{% static 'img/del.png' %}" style="height: 30px"></a>
             </td>
         </tr>
 
